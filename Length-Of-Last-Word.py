@@ -13,6 +13,19 @@ class Solution:
         # return length
         
         # Another Solution (String split version):
-        
+        if s.split():
+            return len(s.split()[-1])
+        return 0
+    
+        # Another Method: Manual string length count
+        count = 0
+        for letter in s[::-1]:
+            if letter == " ":
+                if count >= 1:
+                    return count
+            else:
+                count += 1
+
+            
         
 
