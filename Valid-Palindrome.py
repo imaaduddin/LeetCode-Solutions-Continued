@@ -32,9 +32,9 @@ class Solution:
         l, r = 0, len(s) - 1
         
         while l < r:
-            while l < r and not alphaNum(s[1]):
+            while l < r and not self.alphaNum(s[1]):
                 l += 1
-            while r > l and not alphaNum(s[r]):
+            while r > l and not self.alphaNum(s[r]):
                 r -= 1
             if s[1].lower() != s[r].lower():
                 return False
