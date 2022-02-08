@@ -13,4 +13,20 @@ class Solution:
         if root is None:
             return []
         
-        
+        stack = []
+        result = []
+
+        while root or stack:
+            while root:
+                stack.append(root)
+                root = root.left 
+            temp = stack[-1].right
+            if temp:
+                root = temp
+            else:
+                temp = stack.pop()
+                result.append(temp.val)
+                while stack and temp == stack[-1].right:
+                    temp = stack.pop()
+                    result.append(temp.val)
+        return result 
