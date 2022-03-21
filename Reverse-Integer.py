@@ -69,3 +69,15 @@ class Solution:
             res = (res * 10) + digit
         
         return res
+    
+# Another solution
+class Solution:
+    def reverse(self, x: int) -> int:
+        output = int(str(abs(x))[::-1])
+        if output < 2**31:
+            if x >= 0:
+                return output
+            else:
+                return -output
+        else:
+            return 0
